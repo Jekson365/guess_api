@@ -4,7 +4,7 @@ module Users
       user = Users::User.new(user_params)
       user.score = 0
       if user.save
-        set_user_cookie(user.id)
+        set_cookie(user.id)
         render json: user
       else
         render json: {errors: user.errors.full_messages},status: :conflict
@@ -21,12 +21,13 @@ module Users
         user.update(score: update_user_params[:score])
       end
     end
-    def set_user_cookie(user_id)
+
+    def set_cookie(user_id)
       cookies[:user] = {
         value: user_id,
         expires: 20.years.from_now,
         same_site: :none, # Required for cross-origin requests
-        secure: true, # Ensure it's secure only in production (uses HTTPS)
+        secure: false, # Ensure it's secure only in production (uses HTTPS)
         domain: :all, # Allow cookie across subdomains
         path: '/', # Cookie accessible throughout the app
         httponly: false # Ensures the cookie isn't accessible via JavaScript

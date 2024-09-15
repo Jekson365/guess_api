@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     patch '/update_score',to: 'users#update_score'
     get '/get_cookie',to: 'users#get_cookie'
+    post '/set_cookie',to: 'users#set_cookie'
   end
   # Defines the root path route ("/")
   # root "posts#index"
