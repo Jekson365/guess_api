@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     resources :answers
     resources :questions
   end
+  namespace :users do
+    resources :users
+
+    patch '/update_score',to: 'users#update_score'
+    get '/get_cookie',to: 'users#get_cookie'
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
