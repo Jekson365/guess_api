@@ -95,9 +95,6 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
-    debug (1.9.2)
-      irb (~> 1.10)
-      reline (>= 0.3.8)
     drb (2.2.1)
     erubi (1.13.0)
     ffi (1.17.0-aarch64-linux-gnu)
@@ -238,7 +235,6 @@ DEPENDENCIES
   blueprinter (~> 1.1)
   bootsnap
   carrierwave
-  debug
   pg (~> 1.1)
   pry-rails (~> 0.3.11)
   puma (>= 5.0)
