@@ -28,7 +28,6 @@ module Users
         expires: 20.years.from_now,
         same_site: :none, # Required for cross-origin requests
         secure: true, # Ensure it's secure only in production (uses HTTPS)
-        domain: 'gapi.testpuzzle.ge', # Allow cookie across subdomains
         path: '/', # Cookie accessible throughout the app
         httponly: false # Ensures the cookie isn't accessible via JavaScript
       }
