@@ -7,9 +7,9 @@ module Questions
 
     private
     def set_position_id
-      last = Questions::Question.last
-      if last
-        self.position = last.position + 1
+      maximum = Questions::Question.maximum(:position)
+      if maximum
+        self.position = maximum + 1
       else
         self.position = 1
       end

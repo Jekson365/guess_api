@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/guess_app_api_development</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="guess_app_api_development@188.40.156.186" uuid="ffd15e8e-e756-474f-ab2a-c9ca18a89e45">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://188.40.156.186:5432/guess_app_api_development</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
