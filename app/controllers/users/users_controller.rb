@@ -12,7 +12,7 @@ module Users
     end
 
     def index
-      users = Users::User.all
+      users = Users::User.all.order('score DESC')
       render json: users
     end
     def update_score
