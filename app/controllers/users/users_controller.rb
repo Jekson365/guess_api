@@ -27,7 +27,7 @@ module Users
         value: user_id,
         expires: 20.years.from_now,
         same_site: :none, # Required for cross-origin requests
-        secure: true, # Ensure it's secure only in production (uses HTTPS)
+        secure: false, # Ensure it's secure only in production (uses HTTPS)
         path: '/', # Cookie accessible throughout the app
         httponly: false # Ensures the cookie isn't accessible via JavaScript
       }
