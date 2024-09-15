@@ -27,7 +27,7 @@ module Users
         expires: 20.years.from_now,
         same_site: :none, # Required for cross-origin requests
         secure: false, # Ensure it's secure only in production (uses HTTPS)
-        domain: :all, # Allow cookie across subdomains
+        domain: '.testpuzzle.ge', # Allow cookie across subdomains
         path: '/', # Cookie accessible throughout the app
         httponly: true # Ensures the cookie isn't accessible via JavaScript
       }
