@@ -1,3 +1,3 @@
 class AnswersBlueprint < Blueprinter::Base
-  fields :image,:answer,:is_true,:question_id
+  fields :id,:image,:answer,:question_id
 end

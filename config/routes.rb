@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :questions do
     resources :answers
     resources :questions
+    post '/check',to: 'questions#check_answers'
   end
   namespace :users do
     resources :users

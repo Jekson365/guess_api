@@ -8,12 +8,12 @@ module Questions
     end
 
     def index
-      questions = Questions::Question.all
+      questions = Questions::Question.includes(:answers).all
       render json: QuestionsBlueprint.render(questions, view: :normal)
     end
 
     def show
-      question = Questions::Question.find_by(position: params[:id])
+      question = Questions::Question.includes(:answers).find_by(position: params[:id])
       next_question = Questions::Question.find_by(position: params[:id].to_i + 1)
 
       if question
@@ -28,10 +28,23 @@ module Questions
       render json: { error: e.message }, status: :internal_server_error
     end
 
+    def check_answers
+      answer = Questions::Answer.find_by(id: answer_params[:answer_id])
+      if answer['is_true']
+        render json: {ans: 'true'}
+      else
+        render json: {ans: 'false'}
+      end
+    end
+
     private
 
     def question_params
       params.require(:question).permit(:question, answers_attributes: [:answer, :is_true, :image])
+    end
+
+    def answer_params
+      params.permit(:answer_id)
     end
   end
 end
