@@ -95,6 +95,10 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
     ffi (1.17.0-aarch64-linux-gnu)
@@ -235,6 +239,7 @@ DEPENDENCIES
   blueprinter (~> 1.1)
   bootsnap
   carrierwave
+  dotenv-rails
   pg (~> 1.1)
   pry-rails (~> 0.3.11)
   puma (>= 5.0)

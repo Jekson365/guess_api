@@ -1,5 +1,6 @@
 module Users
   class UsersController < ApplicationController
+    before_action :auth_api_key,only: [:update_score]
     def create
       user = Users::User.new(user_params)
       user.score = 0
@@ -7,7 +8,7 @@ module Users
         set_cookie(user.id)
         render json: user
       else
-        render json: {errors: user.errors.full_messages},status: :conflict
+        render json: {errors: user.errors.full_messages}, status: :conflict
       end
     end
 
